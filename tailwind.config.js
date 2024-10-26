@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // Enable dark mode variant
   theme: {
     extend: {
       colors: {
@@ -14,7 +15,14 @@ export default {
         'accent-white': '#FFFFFF',
         'accent-gray': '#C0C0C0',
         brown: '#8B4513',
-        green: '#32CD32'
+        green: '#32CD32',
+        'dark-background': '#121212',
+        // Light theme colors (new)
+        'light-background': '#F5F5F0',
+        'light-text': '#2D3748',
+        'light-accent': '#E2E8F0',
+        'light-primary': '#F6AD55',
+        'light-secondary': '#ED8936',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

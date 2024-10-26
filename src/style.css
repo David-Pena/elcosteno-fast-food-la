@@ -11,6 +11,16 @@
 body {
   margin: 0;
   min-height: 100vh;
+}
+
+/* Light theme styles */
+:root {
+  background-color: #F5F5F0;
+  color: #2D3748;
+}
+
+/* Dark theme styles */
+:root.dark {
   background-color: #121212;
   color: #FFFFFF;
 }
@@ -22,14 +32,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #C0C0C0;
+  @apply bg-light-accent dark:bg-accent-gray;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FFD700;
+  @apply bg-light-primary dark:bg-primary;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF8C00;
+  @apply bg-light-secondary dark:bg-secondary;
 }

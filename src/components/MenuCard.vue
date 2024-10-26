@@ -42,13 +42,13 @@ const prevImage = () => {
       />
     </div>
 
-    <!-- Navigation controls -->
+    <!-- Navigation controls - Update colors -->
     <div
       class="absolute inset-x-0 top-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
     >
       <button
         @click.stop="prevImage"
-        class="p-2 rounded-full bg-background/80 text-accent-white hover:bg-primary hover:text-background transition-colors"
+        class="p-2 rounded-full bg-light-background/80 dark:bg-background/80 text-light-text dark:text-accent-white hover:bg-light-primary hover:text-white dark:hover:bg-primary dark:hover:text-background transition-colors"
         aria-label="Previous image"
       >
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -62,7 +62,7 @@ const prevImage = () => {
       </button>
       <button
         @click.stop="nextImage"
-        class="p-2 rounded-full bg-background/80 text-accent-white hover:bg-primary hover:text-background transition-colors"
+        class="p-2 rounded-full bg-light-background/80 dark:bg-background/80 text-light-text dark:text-accent-white hover:bg-light-primary hover:text-white dark:hover:bg-primary dark:hover:text-background transition-colors"
         aria-label="Next image"
       >
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -76,14 +76,16 @@ const prevImage = () => {
       </button>
     </div>
 
-    <!-- Item details -->
+    <!-- Item details - Update text colors -->
     <div
-      class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center z-10"
+      class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center z-10 bg-light-background/80 dark:bg-background/80"
     >
-      <h3 class="text-2xl font-bold text-accent-white mb-2">{{ item.name }}</h3>
-      <p class="text-accent-white mb-2">{{ item.description }}</p>
+      <h3 class="text-2xl font-bold text-light-text dark:text-accent-white mb-2">
+        {{ item.name }}
+      </h3>
+      <p class="text-gray-600 dark:text-accent-white mb-2">{{ item.description }}</p>
       <span
-        class="inline-block text-sm text-accent-white bg-primary/80 px-3 py-1 rounded-full"
+        class="inline-block text-sm text-white bg-light-primary/80 dark:bg-primary/80 px-3 py-1 rounded-full"
       >
         {{ item.category }}
       </span>
