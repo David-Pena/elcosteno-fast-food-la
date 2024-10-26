@@ -14,8 +14,8 @@ const location = {
   city: "Los Angeles",
   state: "CA",
   zip: "90028",
-  phone: "+1 404 323 9231",
-  email: "info@elcostenola.com",
+  phone: "+1 (323) 331-5695",
+  email: "henryfernandog352@gmail.com",
   hours: {
     weekdays: "10:00 AM - 02:00 AM",
     closed: "Monday & Tuesday",
@@ -111,9 +111,13 @@ const getGoogleMapsUrl = () => {
             </div>
             <div>
               <h3 class="font-semibold text-light-text dark:text-accent-white mb-3">Hours</h3>
+
+              <p class="text-gray-600 dark:text-accent-gray">Open</p>
               <p class="text-gray-600 dark:text-accent-gray">Wednesday - Sunday:</p>
               <p class="text-gray-600 dark:text-accent-gray">{{ location.hours.weekdays }}</p>
-              <p class="text-gray-600 dark:text-accent-gray mt-2 text-tertiary">
+
+              <p class="text-gray-600 dark:text-accent-gray mt-2">Closed</p>
+              <p class="text-gray-600 dark:text-accent-gray">
                 {{ location.hours.closed }}
               </p>
             </div>

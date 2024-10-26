@@ -19,6 +19,10 @@ const faqs = [
     answer:
       "You can let us know if you want to remove an item from your order and we will take care of it.",
   },
+  {
+    question: "Do you offer delivery?",
+    answer: "Yes, we offer delivery services within Los Angeles. Contact us for more details.",
+  },
 ];
 </script>
 

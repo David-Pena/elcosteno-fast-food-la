@@ -76,7 +76,7 @@ const toggleMobileMenu = () => {
       <!-- Mobile Menu -->
       <div
         v-if="isMobileMenuOpen"
-        class="md:hidden mt-4 dark:bg-dark-background/90 bg-light-background/90 backdrop-blur-sm rounded-lg p-4"
+        class="md:hidden mt-4 bg-dark-background/90 backdrop-blur-sm rounded-lg p-4"
       >
         <div class="flex flex-col space-y-4">
           <a
