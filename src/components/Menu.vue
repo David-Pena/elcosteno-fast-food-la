@@ -3,6 +3,9 @@ import { ref, computed } from "vue";
 import MenuCard from "./MenuCard.vue";
 
 const activeCategory = ref("All");
+// Add new ref for controlling how many items to show
+const showAllItems = ref(false);
+const itemsPerPage = 9;
 
 const categories = [
   "All",
@@ -220,11 +223,35 @@ const menuItems = [
   },
 ];
 
-const filteredItems = computed(() =>
-  activeCategory.value === "All"
-    ? menuItems
-    : menuItems.filter((item) => item.category === activeCategory.value)
+const filteredItems = computed(() => {
+  const filtered =
+    activeCategory.value === "All"
+      ? menuItems
+      : menuItems.filter((item) => item.category === activeCategory.value);
+
+  // Only limit items when "All" is selected and showAllItems is false
+  if (activeCategory.value === "All" && !showAllItems.value) {
+    return filtered.slice(0, itemsPerPage);
+  }
+  return filtered;
+});
+
+// Add computed property to determine if "Show More" button should be visible
+const showMoreButton = computed(
+  () =>
+    activeCategory.value === "All" && menuItems.length > itemsPerPage && !showAllItems.value
 );
+
+// Add function to handle showing all items
+const toggleShowAll = () => {
+  showAllItems.value = true;
+};
+
+// Reset showAllItems when changing categories
+const handleCategoryChange = (category: string) => {
+  activeCategory.value = category;
+  showAllItems.value = false;
+};
 </script>
 
 <template>
@@ -240,7 +267,7 @@ const filteredItems = computed(() =>
         <button
           v-for="category in categories"
           :key="category"
-          @click="activeCategory = category"
+          @click="handleCategoryChange(category)"
           :class="[
             'px-4 py-2 rounded-full transition-colors whitespace-nowrap',
             activeCategory === category
@@ -255,6 +282,16 @@ const filteredItems = computed(() =>
       <!-- Menu Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <MenuCard v-for="item in filteredItems" :key="item.id" :item="item" />
+      </div>
+
+      <!-- Add Show More button -->
+      <div v-if="showMoreButton" class="flex justify-center mt-8">
+        <button
+          @click="toggleShowAll"
+          class="px-6 py-2 bg-primary text-background rounded-full hover:bg-primary/90 transition-colors"
+        >
+          Show More
+        </button>
       </div>
     </div>
   </div>
