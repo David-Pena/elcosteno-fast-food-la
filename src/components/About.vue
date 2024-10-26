@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useIntersectionObserver } from '@vueuse/core';
+import { ref } from "vue";
+import { useIntersectionObserver } from "@vueuse/core";
 
 const aboutRef = ref(null);
 const isVisible = ref(false);
@@ -11,20 +11,20 @@ useIntersectionObserver(aboutRef, ([{ isIntersecting }]) => {
 
 const features = [
   {
-    icon: '☕',
-    title: 'Authentic Recipes',
-    description: 'Traditional Colombian recipes passed down through generations'
+    icon: "☕",
+    title: "Authentic Recipes",
+    description: "Traditional Colombian recipes passed down through generations",
   },
   {
-    icon: '🌟',
-    title: 'Fresh Ingredients',
-    description: 'Locally sourced ingredients for the best flavors'
+    icon: "🌟",
+    title: "Fresh Ingredients",
+    description: "Locally sourced ingredients for the best flavors",
   },
   {
-    icon: '❤️',
-    title: 'Made with Love',
-    description: 'Every dish crafted with passion and care'
-  }
+    icon: "❤️",
+    title: "Made with Love",
+    description: "Every dish crafted with passion and care",
+  },
 ];
 </script>
 
@@ -42,8 +42,12 @@ const features = [
             />
           </div>
           <!-- Decorative Elements -->
-          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-colombia-yellow rounded-full opacity-20"></div>
-          <div class="absolute -top-6 -left-6 w-24 h-24 bg-colombia-blue rounded-full opacity-20"></div>
+          <div
+            class="absolute -bottom-6 -right-6 w-32 h-32 bg-colombia-yellow rounded-full opacity-20"
+          ></div>
+          <div
+            class="absolute -top-6 -left-6 w-24 h-24 bg-colombia-blue rounded-full opacity-20"
+          ></div>
         </div>
 
         <!-- Content Column -->
@@ -52,19 +56,24 @@ const features = [
             Our Passion for Authentic
             <span class="text-colombia-red">Colombian Flavors</span>
           </h2>
-          
+
           <p class="text-gray-600 mb-8 leading-relaxed">
-            Born from the vibrant streets of Colombia and brought to the heart of Los Angeles, 
-            Sabor Colombiano is more than just a restaurant – it's a celebration of our rich 
-            culinary heritage. Every dish tells a story of tradition, family, and the joy of 
-            sharing authentic Colombian street food with our community.
+            Born from the vibrant streets of Colombia and brought to the heart of Los Angeles,
+            <span class="font-bold text-secondary"
+              >El Costeño <span class="text-primary">LA</span></span
+            >
+            is more than just a restaurant – it's a celebration of our rich culinary heritage.
+            Every dish tells a story of tradition, family, and the joy of sharing authentic
+            Colombian street food with our community.
           </p>
 
           <!-- Feature Grid -->
           <div class="grid grid-cols-1 gap-6 mb-8">
-            <div v-for="feature in features" 
-                 :key="feature.title"
-                 class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 hover:shadow-md transition-all duration-300">
+            <div
+              v-for="feature in features"
+              :key="feature.title"
+              class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 hover:shadow-md transition-all duration-300"
+            >
               <span class="text-2xl">{{ feature.icon }}</span>
               <div>
                 <h3 class="font-semibold text-gray-900 mb-1">{{ feature.title }}</h3>
@@ -73,15 +82,24 @@ const features = [
             </div>
           </div>
 
-          <a href="#menu" 
-             class="inline-flex items-center px-6 py-3 bg-colombia-blue text-white rounded-full hover:bg-colombia-red transition-colors group">
+          <a
+            href="#menu"
+            class="inline-flex items-center px-6 py-3 bg-colombia-blue text-white rounded-full hover:bg-colombia-red transition-colors group"
+          >
             Explore Our Menu
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                 class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                 fill="none" 
-                 viewBox="0 0 24 24" 
-                 stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
             </svg>
           </a>
         </div>
