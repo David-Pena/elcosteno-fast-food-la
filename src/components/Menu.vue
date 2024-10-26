@@ -58,6 +58,7 @@ const menuItems = [
     category: "Hamburgers",
     images: [
       "https://images.unsplash.com/photo-1598023696416-0193a0bcd302?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-159023696416-0193a0bcd302?auto=format&fit=crop&q=80",
     ],
   },
 
@@ -228,7 +229,7 @@ const filteredItems = computed(() =>
 
 <template>
   <div id="menu" class="py-20 bg-background">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center text-accent-white mb-4">Our Menu</h2>
       <p class="text-center text-accent-gray mb-12 max-w-2xl mx-auto">
         Discover the authentic taste of Colombia with our carefully crafted menu
@@ -252,8 +253,8 @@ const filteredItems = computed(() =>
       </div>
 
       <!-- Menu Grid -->
-      <div class="grid md:grid-cols-2 gap-8">
-        <MenuCard v-for="item in filteredItems" :key="item.name" :item="item" />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <MenuCard v-for="item in filteredItems" :key="item.id" :item="item" />
       </div>
     </div>
   </div>
