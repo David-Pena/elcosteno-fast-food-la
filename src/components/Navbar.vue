@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import SocialLinks from "./SocialLinks.vue";
 
 const isScrolled = ref(false);
+const isMobileMenuOpen = ref(false);
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -17,6 +18,10 @@ onMounted(() => {
     isScrolled.value = window.scrollY > 50;
   });
 });
+
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+};
 </script>
 
 <template>
@@ -49,6 +54,7 @@ onMounted(() => {
 
         <!-- Mobile Menu Button -->
         <button
+          @click="toggleMobileMenu"
           class="md:hidden p-2 text-accent-white hover:text-primary transition-colors"
           aria-label="Menu"
         >
@@ -61,6 +67,25 @@ onMounted(() => {
             />
           </svg>
         </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        v-if="isMobileMenuOpen"
+        class="md:hidden mt-4 bg-background/90 backdrop-blur-sm rounded-lg p-4"
+      >
+        <div class="flex flex-col space-y-4">
+          <a
+            v-for="item in navItems.filter((item) => !item.component)"
+            :key="item.name"
+            :href="item.href"
+            class="transition-colors font-medium text-accent-white hover:text-primary"
+            @click="isMobileMenuOpen = false"
+          >
+            {{ item.name }}
+          </a>
+          <SocialLinks :transparent-bg="!isScrolled" />
+        </div>
       </div>
     </div>
   </nav>
