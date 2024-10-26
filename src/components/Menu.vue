@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import MenuCard from "./MenuCard.vue";
+import DeliveryMessage from "./DeliveryMessage.vue"; // Update import
 
 const activeCategory = ref("All");
 // Add new ref for controlling how many items to show
@@ -263,6 +264,9 @@ const handleCategoryChange = (category: string) => {
       <p class="text-center text-gray-600 dark:text-accent-gray mb-12 max-w-2xl mx-auto">
         Discover the authentic taste of Colombia with our carefully crafted menu
       </p>
+
+      <!-- Delivery Message -->
+      <DeliveryMessage />
 
       <!-- Category Filter -->
       <div class="flex justify-center space-x-4 mb-12 overflow-x-auto pb-4">
