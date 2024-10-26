@@ -257,8 +257,10 @@ const handleCategoryChange = (category: string) => {
 <template>
   <div id="menu" class="py-20 bg-light-background dark:bg-dark-background">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center text-accent-white mb-4">Our Menu</h2>
-      <p class="text-center text-accent-gray mb-12 max-w-2xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-light-text dark:text-accent-white mb-4">
+        Our Menu
+      </h2>
+      <p class="text-center text-gray-600 dark:text-accent-gray mb-12 max-w-2xl mx-auto">
         Discover the authentic taste of Colombia with our carefully crafted menu
       </p>
 
@@ -271,8 +273,8 @@ const handleCategoryChange = (category: string) => {
           :class="[
             'px-4 py-2 rounded-full transition-colors whitespace-nowrap',
             activeCategory === category
-              ? 'bg-primary text-background font-bold'
-              : 'bg-background text-accent-gray hover:text-primary border border-accent-gray/20',
+              ? 'bg-light-primary dark:bg-primary text-white dark:text-background font-bold'
+              : 'bg-light-accent dark:bg-background text-gray-600 dark:text-accent-gray hover:text-light-primary dark:hover:text-primary border border-gray-200 dark:border-accent-gray/20',
           ]"
         >
           {{ category }}
@@ -288,7 +290,7 @@ const handleCategoryChange = (category: string) => {
       <div v-if="showMoreButton" class="flex justify-center mt-8">
         <button
           @click="toggleShowAll"
-          class="px-6 py-2 bg-primary text-background rounded-full hover:bg-primary/90 transition-colors"
+          class="px-6 py-2 bg-light-primary dark:bg-primary text-background rounded-full hover:bg-light-secondary dark:hover:bg-primary/90 transition-colors"
         >
           Show More
         </button>

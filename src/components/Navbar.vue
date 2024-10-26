@@ -44,12 +44,14 @@ const toggleMobileMenu = () => {
             <a
               v-if="!item.component"
               :href="item.href"
-              class="transition-colors font-medium hover:text-primary"
-              :class="[isScrolled ? 'text-accent-white' : 'text-accent-white']"
+              class="transition-colors font-medium hover:text-secondary dark:hover:text-primary"
+              :class="[
+                isScrolled ? 'text-light-text dark:text-accent-white' : 'text-accent-white',
+              ]"
             >
               {{ item.name }}
             </a>
-            <component v-else :is="item.component" :transparent-bg="!isScrolled" />
+            <component v-else :is="item.component" transparent-bg />
           </template>
           <ThemeToggle />
         </div>
@@ -86,7 +88,7 @@ const toggleMobileMenu = () => {
           >
             {{ item.name }}
           </a>
-          <SocialLinks :transparent-bg="!isScrolled" />
+          <SocialLinks transparent-bg />
           <ThemeToggle />
         </div>
       </div>

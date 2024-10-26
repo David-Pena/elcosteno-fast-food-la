@@ -52,15 +52,15 @@ const features = [
 
         <!-- Content Column -->
         <div :class="{ 'animate-slide-up': isVisible }">
-          <h2 class="text-4xl font-bold mb-6 text-gray-900">
+          <h2 class="text-4xl font-bold mb-6 text-light-text dark:text-accent-white">
             Our Passion for Authentic
             <span class="text-colombia-red">Colombian Flavors</span>
           </h2>
 
-          <p class="text-gray-600 mb-8 leading-relaxed">
+          <p class="text-gray-600 dark:text-accent-gray mb-8 leading-relaxed">
             Born from the vibrant streets of Colombia and brought to the heart of Los Angeles,
-            <span class="font-bold text-secondary"
-              >El Costeño <span class="text-primary">LA</span></span
+            <span class="font-bold dark:text-secondary"
+              >El Costeño <span class="dark:text-primary">LA</span></span
             >
             is more than just a restaurant – it's a celebration of our rich culinary heritage.
             Every dish tells a story of tradition, family, and the joy of sharing authentic
@@ -72,36 +72,19 @@ const features = [
             <div
               v-for="feature in features"
               :key="feature.title"
-              class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 hover:shadow-md transition-all duration-300"
+              class="flex items-start space-x-4 p-4 rounded-lg hover:bg-light-accent/50 dark:hover:bg-accent-gray/10 transition-all duration-300"
             >
               <span class="text-2xl">{{ feature.icon }}</span>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-1">{{ feature.title }}</h3>
-                <p class="text-gray-600 text-sm">{{ feature.description }}</p>
+                <h3 class="font-semibold text-light-text dark:text-accent-white mb-1">
+                  {{ feature.title }}
+                </h3>
+                <p class="text-gray-600 dark:text-accent-gray text-sm">
+                  {{ feature.description }}
+                </p>
               </div>
             </div>
           </div>
-
-          <a
-            href="#menu"
-            class="inline-flex items-center px-6 py-3 bg-colombia-blue text-white rounded-full hover:bg-colombia-red transition-colors group"
-          >
-            Explore Our Menu
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </a>
         </div>
       </div>
     </div>

@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { socialLinks } from "../constants/socialLinks";
 
-// Add a new prop for transparent background
-defineProps({
-  transparentBg: {
-    type: Boolean,
-    default: false,
-  },
-});
+defineProps<{
+  transparentBg?: boolean;
+}>();
 </script>
 
 <template>
@@ -23,7 +19,7 @@ defineProps({
       rel="noopener noreferrer"
     >
       <svg
-        class="w-5 h-5 text-accent-gray group-hover:text-primary transition-colors"
+        class="w-5 h-5 text-accent-gray group-hover:text-secondary dark:group-hover:text-primary transition-colors"
         viewBox="0 0 24 24"
         fill="currentColor"
       >

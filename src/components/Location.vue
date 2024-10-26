@@ -38,10 +38,10 @@ const getGoogleMapsUrl = () => {
   >
     <div class="max-w-5xl mx-auto px-4">
       <div class="text-center mb-12" :class="{ 'animate-fade-in': isVisible }">
-        <h2 class="text-4xl font-bold text-accent-white mb-4">
-          Where to <span class="text-primary">Find Us?</span>
+        <h2 class="text-4xl font-bold text-light-text dark:text-accent-white mb-4">
+          Where to <span class="text-light-primary dark:text-primary">Find Us?</span>
         </h2>
-        <p class="text-accent-gray max-w-2xl mx-auto">
+        <p class="text-gray-600 dark:text-accent-gray max-w-2xl mx-auto">
           Visit us to experience authentic Colombian flavors in the heart of Los Angeles
         </p>
       </div>
@@ -49,7 +49,7 @@ const getGoogleMapsUrl = () => {
       <div class="grid md:grid-cols-2 gap-6" :class="{ 'animate-slide-up': isVisible }">
         <!-- Address Card -->
         <div
-          class="bg-background border border-accent-gray/20 rounded-lg p-8 hover:border-primary/50 transition-all duration-300"
+          class="bg-white dark:bg-background border border-gray-200 dark:border-accent-gray/20 rounded-lg p-8 hover:border-light-primary/50 dark:hover:border-primary/50 transition-all duration-300"
         >
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0">
@@ -76,9 +76,11 @@ const getGoogleMapsUrl = () => {
               </div>
             </div>
             <div>
-              <h3 class="font-semibold text-accent-white mb-3">Address</h3>
-              <p class="text-accent-gray">{{ location.address }}</p>
-              <p class="text-accent-gray">
+              <h3 class="font-semibold text-light-text dark:text-accent-white mb-3">
+                Address
+              </h3>
+              <p class="text-gray-600 dark:text-accent-gray">{{ location.address }}</p>
+              <p class="text-gray-600 dark:text-accent-gray">
                 {{ location.city }}, {{ location.state }} {{ location.zip }}
               </p>
             </div>
@@ -87,7 +89,7 @@ const getGoogleMapsUrl = () => {
 
         <!-- Hours Card -->
         <div
-          class="bg-background border border-accent-gray/20 rounded-lg p-8 hover:border-primary/50 transition-all duration-300"
+          class="bg-white dark:bg-background border border-gray-200 dark:border-accent-gray/20 rounded-lg p-8 hover:border-light-primary/50 dark:hover:border-primary/50 transition-all duration-300"
         >
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0">
@@ -108,17 +110,19 @@ const getGoogleMapsUrl = () => {
               </div>
             </div>
             <div>
-              <h3 class="font-semibold text-accent-white mb-3">Hours</h3>
-              <p class="text-accent-gray">Wednesday - Sunday:</p>
-              <p class="text-accent-gray">{{ location.hours.weekdays }}</p>
-              <p class="text-accent-gray mt-2 text-tertiary">{{ location.hours.closed }}</p>
+              <h3 class="font-semibold text-light-text dark:text-accent-white mb-3">Hours</h3>
+              <p class="text-gray-600 dark:text-accent-gray">Wednesday - Sunday:</p>
+              <p class="text-gray-600 dark:text-accent-gray">{{ location.hours.weekdays }}</p>
+              <p class="text-gray-600 dark:text-accent-gray mt-2 text-tertiary">
+                {{ location.hours.closed }}
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Contact Card -->
         <div
-          class="md:col-span-2 max-w-md mx-auto w-full bg-background border border-accent-gray/20 rounded-lg p-8 hover:border-primary/50 transition-all duration-300"
+          class="md:col-span-2 max-w-md mx-auto w-full bg-white dark:bg-background border border-gray-200 dark:border-accent-gray/20 rounded-lg p-8 hover:border-light-primary/50 dark:hover:border-primary/50 transition-all duration-300"
         >
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0">
@@ -139,9 +143,11 @@ const getGoogleMapsUrl = () => {
               </div>
             </div>
             <div>
-              <h3 class="font-semibold text-accent-white mb-3">Contact</h3>
-              <p class="text-accent-gray">{{ location.phone }}</p>
-              <p class="text-accent-gray">{{ location.email }}</p>
+              <h3 class="font-semibold text-light-text dark:text-accent-white mb-3">
+                Contact
+              </h3>
+              <p class="text-gray-600 dark:text-accent-gray">{{ location.phone }}</p>
+              <p class="text-gray-600 dark:text-accent-gray">{{ location.email }}</p>
             </div>
           </div>
         </div>
