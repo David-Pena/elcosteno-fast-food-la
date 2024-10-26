@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import Hero from './components/Hero.vue'
-import About from './components/About.vue'
-import Menu from './components/Menu.vue'
-import Location from './components/Location.vue'
-import FAQ from './components/FAQ.vue'
-import Footer from './components/Footer.vue'
-import Navbar from './components/Navbar.vue'
+import Hero from "./components/Hero.vue";
+import About from "./components/About.vue";
+import Menu from "./components/Menu.vue";
+import Location from "./components/Location.vue";
+import FAQ from "./components/FAQ.vue";
+import Footer from "./components/Footer.vue";
+import Navbar from "./components/Navbar.vue";
+import BackToTop from "./components/BackToTop.vue";
 </script>
 
 <template>
@@ -17,5 +18,7 @@ import Navbar from './components/Navbar.vue'
     <Location />
     <FAQ />
     <Footer />
+
+    <BackToTop />
   </div>
 </template>
