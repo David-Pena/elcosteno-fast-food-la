@@ -29,7 +29,7 @@ const features = [
 </script>
 
 <template>
-  <section id="about" ref="aboutRef" class="py-20 bg-white">
+  <section id="about" ref="aboutRef" class="py-20 bg-light-background dark:bg-dark-background">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <!-- Image Column -->

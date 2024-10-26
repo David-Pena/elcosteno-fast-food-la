@@ -23,7 +23,7 @@ const faqs = [
 </script>
 
 <template>
-  <section id="faq" ref="faqRef" class="py-20 bg-background">
+  <section id="faq" ref="faqRef" class="py-20 bg-light-background dark:bg-dark-background">
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-12" :class="{ 'animate-fade-in': isVisible }">
         <h2 class="text-4xl font-bold text-accent-white mb-4">

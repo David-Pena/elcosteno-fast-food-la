@@ -3,7 +3,7 @@ import SocialLinks from "./SocialLinks.vue";
 </script>
 
 <template>
-  <footer class="py-16 bg-background relative">
+  <footer class="py-16 bg-light-background dark:bg-dark-background relative">
     <div class="max-w-6xl mx-auto px-4">
       <!-- Decorative lines with social icons -->
       <div class="flex items-center justify-center mb-12">

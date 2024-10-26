@@ -255,7 +255,7 @@ const handleCategoryChange = (category: string) => {
 </script>
 
 <template>
-  <div id="menu" class="py-20 bg-background">
+  <div id="menu" class="py-20 bg-light-background dark:bg-dark-background">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center text-accent-white mb-4">Our Menu</h2>
       <p class="text-center text-accent-gray mb-12 max-w-2xl mx-auto">

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import SocialLinks from "./SocialLinks.vue";
+import ThemeToggle from "./ThemeToggle.vue";
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
@@ -29,7 +30,7 @@ const toggleMobileMenu = () => {
     class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
     :class="[
       isScrolled
-        ? 'bg-background/90 backdrop-blur-sm border-b border-accent-gray/20'
+        ? 'dark:bg-dark-background/90 bg-light-background/90 backdrop-blur-sm border-b border-accent-gray/20'
         : 'bg-transparent',
     ]"
   >
@@ -50,6 +51,7 @@ const toggleMobileMenu = () => {
             </a>
             <component v-else :is="item.component" :transparent-bg="!isScrolled" />
           </template>
+          <ThemeToggle />
         </div>
 
         <!-- Mobile Menu Button -->
@@ -72,7 +74,7 @@ const toggleMobileMenu = () => {
       <!-- Mobile Menu -->
       <div
         v-if="isMobileMenuOpen"
-        class="md:hidden mt-4 bg-background/90 backdrop-blur-sm rounded-lg p-4"
+        class="md:hidden mt-4 dark:bg-dark-background/90 bg-light-background/90 backdrop-blur-sm rounded-lg p-4"
       >
         <div class="flex flex-col space-y-4">
           <a
@@ -85,6 +87,7 @@ const toggleMobileMenu = () => {
             {{ item.name }}
           </a>
           <SocialLinks :transparent-bg="!isScrolled" />
+          <ThemeToggle />
         </div>
       </div>
     </div>
